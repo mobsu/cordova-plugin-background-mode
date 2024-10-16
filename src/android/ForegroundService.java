@@ -35,7 +35,6 @@ import android.os.Build;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.app.NotificationChannel;
-import android.app.ServiceInfo;
 
 import org.json.JSONObject;
 
@@ -131,7 +130,7 @@ public class ForegroundService extends Service {
 
         if (!isSilent) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                startForeground(NOTIFICATION_ID, makeNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_LOCATION);
+                startForeground(NOTIFICATION_ID, makeNotification(), 8);
             } else {
                 startForeground(NOTIFICATION_ID, makeNotification());
             }
